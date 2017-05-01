@@ -23,7 +23,7 @@ public class NoCraft {
 			Location<World> block = event.getTargetBlock().getLocation().get();
 	        if(block.getBlock().getType() == BlockTypes.CRAFTING_TABLE) {
 	        	event.setCancelled(true);
-	        	((EntityPlayerMP) player).addChatMessage(new TextComponentString(TextFormatting.RED + "You are not allowed to craft with the workbench."));
+	        	player.sendMessage(Text.of(TextColors.RED, "You are not allowed to craft with the workbench."));
 	        }
 		}
 	}
